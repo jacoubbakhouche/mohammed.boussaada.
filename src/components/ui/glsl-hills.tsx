@@ -155,7 +155,7 @@ const GLSLHills: React.FC<GLSLHillsProps> = ({
 
               void main(void) {
                 float opacity = (96.0 - length(vPosition)) / 256.0 * 0.6;
-                vec3 color = vec3(0.204, 0.306, 0.255); // Sage green #344E41
+                vec3 color = vec3(0.8, 0.9, 0.85); // Light sage/white for better visibility
                 gl_FragColor = vec4(color, opacity);
               }
             `,

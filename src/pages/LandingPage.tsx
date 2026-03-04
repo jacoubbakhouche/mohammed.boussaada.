@@ -60,16 +60,16 @@ export const LandingPage: React.FC<{ onGetStarted: () => void }> = ({ onGetStart
                     <GLSLHills speed={0.3} cameraZ={150} />
                 </div>
 
-                <div className="relative z-10 w-full bg-[#EEF0E5]/80 backdrop-blur-sm p-10 md:p-16 text-center border-y border-[#d4dbc4]">
+                <div className="relative z-10 w-full bg-black/40 backdrop-blur-md p-10 md:p-16 text-center border-y border-white/10">
                     <div className="max-w-4xl mx-auto">
-                        <span className="inline-block px-4 py-1.5 bg-[#d4dbc4] text-[#344E41] text-xs font-bold rounded-full tracking-wide mb-6">
+                        <span className="inline-block px-4 py-1.5 bg-[#344E41] text-white text-xs font-bold rounded-full tracking-wide mb-6">
                             Updated March 2026
                         </span>
-                        <h1 className="text-4xl md:text-7xl font-bold text-[#1a2e1a] leading-tight mb-6" style={{ fontFamily: "'Georgia', serif" }}>
+                        <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight mb-6" style={{ fontFamily: "'Georgia', serif" }}>
                             Designs That Speak <br />
-                            <span className="italic font-light">Louder Than Words</span>
+                            <span className="italic font-light text-[#d4dbc4]">Louder Than Words</span>
                         </h1>
-                        <p className="text-[#4a6a4a] text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+                        <p className="text-[#d4dbc4] text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
                             We craft stunning visuals and user-friendly experiences that help your brand stand out and connect with your audience.
                         </p>
                     </div>
