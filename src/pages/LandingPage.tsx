@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Play, Menu, ChevronDown } from 'lucide-react';
+import { Play, Menu, ChevronDown, CheckCircle2, Star, Quote, ArrowRight, Instagram, Youtube, Facebook, Twitter, Mail, Lock, Search, Bookmark, Share2, Sidebar, LogOut, MessageSquare, Clock, ChevronRight } from 'lucide-react';
+import { GLSLHills } from '../components/ui/glsl-hills';
 
 const YOUTUBE_VIDEO_ID = 'eaX04uyO9MM';
 
@@ -53,17 +54,23 @@ export const LandingPage: React.FC<{ onGetStarted: () => void }> = ({ onGetStart
             </nav>
 
             {/* Hero Section with YouTube Video */}
-            <section className="pt-16 pb-6">
-                <div className="bg-[#EEF0E5] p-10 md:p-16 text-center">
+            <section className="relative pt-16 pb-6 overflow-hidden min-h-[800px] flex flex-col items-center justify-center">
+                {/* GLSL Hills Background */}
+                <div className="absolute inset-0 z-0">
+                    <GLSLHills speed={0.3} cameraZ={150} />
+                </div>
+
+                <div className="relative z-10 w-full bg-[#EEF0E5]/80 backdrop-blur-sm p-10 md:p-16 text-center border-y border-[#d4dbc4]">
                     <div className="max-w-4xl mx-auto">
                         <span className="inline-block px-4 py-1.5 bg-[#d4dbc4] text-[#344E41] text-xs font-bold rounded-full tracking-wide mb-6">
                             Updated March 2026
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-bold text-[#1a2e1a] leading-tight mb-6" style={{ fontFamily: "'Georgia', serif" }}>
-                            Master the Art of Content Creation with Edit Master
+                        <h1 className="text-4xl md:text-7xl font-bold text-[#1a2e1a] leading-tight mb-6" style={{ fontFamily: "'Georgia', serif" }}>
+                            Designs That Speak <br />
+                            <span className="italic font-light">Louder Than Words</span>
                         </h1>
-                        <p className="text-[#4a6a4a] text-lg leading-relaxed mb-10">
-                            From basics to pro learn the secrets and techniques to make your videos trend, guided by Mohamed Salah
+                        <p className="text-[#4a6a4a] text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+                            We craft stunning visuals and user-friendly experiences that help your brand stand out and connect with your audience.
                         </p>
                     </div>
                     <div className="max-w-4xl mx-auto relative rounded-2xl overflow-hidden aspect-video shadow-xl">
@@ -227,26 +234,9 @@ export const LandingPage: React.FC<{ onGetStarted: () => void }> = ({ onGetStart
                                 Design courses taught by designers from the world's best companies
                             </p>
                         </div>
-                        {[
-                            { title: 'Courses', links: ['View all', 'Graphic Design', 'Product Design', 'Web Design', 'Illustration'] },
-                            { title: 'Company', links: ['About us', 'Careers', 'Press', 'News', 'Contact'] },
-                            { title: 'Resources', links: ['Blog', 'Newsletter', 'Events', 'Help centre', 'Tutorials'] },
-                            { title: 'Legal', links: ['Terms', 'Privacy', 'Cookies', 'Licenses', 'Settings'] },
-                        ].map(col => (
-                            <div key={col.title}>
-                                <h4 className="font-bold text-sm text-[#4a6a4a] mb-4">{col.title}</h4>
-                                <ul className="space-y-2.5">
-                                    {col.links.map(link => (
-                                        <li key={link}>
-                                            <a href="#" className="text-sm text-[#6a7a6a] hover:text-[#1a2e1a] transition-colors">{link}</a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
                     </div>
                     <div className="border-t border-[#d4dbc4] mt-12 pt-8 text-sm text-[#8a9a8a]">
-                        © 2026 Lumos Learning Systems. All rights reserved.
+                        © 2026 Edit Master. All rights reserved.
                     </div>
                 </div>
             </footer>

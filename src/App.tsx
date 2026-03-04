@@ -70,13 +70,13 @@ function App() {
     return (
         <div className="flex h-screen overflow-hidden">
             {/* Glassmorphic Sidebar */}
-            <aside className="hidden md:flex w-72 flex-col p-6 glass m-4 mr-0 rounded-3xl">
+            <aside className="hidden md:flex w-72 flex-col p-6 m-4 mr-0 rounded-[32px] bg-[#EEF0E5] border border-[#d4dbc4] shadow-xl">
                 <div
                     onClick={() => setView('landing')}
                     className="flex items-center gap-3 mb-10 px-2 cursor-pointer group"
                 >
-                    <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">E</div>
-                    <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Edit Master</span>
+                    <div className="w-10 h-10 bg-[#344E41] rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">E</div>
+                    <span className="text-xl font-bold text-[#1a2e1a]">Edit Master</span>
                 </div>
 
                 <nav className="flex-grow space-y-2">
@@ -87,15 +87,15 @@ function App() {
                     <SidebarItem icon={Settings} label="Settings" />
                 </nav>
 
-                <div className="mt-auto pt-6 border-t border-white/10 space-y-2">
+                <div className="mt-auto pt-6 border-t border-[#d4dbc4] space-y-2">
                     <SidebarItem icon={LogOut} label="Log Out" onClick={handleLogout} />
                 </div>
             </aside>
 
             {/* Main Content Area */}
-            <main className="flex-grow flex flex-col h-full overflow-hidden">
+            <main className="flex-grow flex flex-col h-full overflow-hidden bg-[#FAFAF7]">
                 {/* Header */}
-                <header className="flex items-center justify-between p-6 px-4 md:px-10">
+                <header className="flex items-center justify-between p-6 px-4 md:px-10 border-b border-[#e8e8e0]">
                     <div className="flex items-center gap-4 flex-grow max-w-2xl">
                         <div className="relative w-full group">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-primary transition-colors" />

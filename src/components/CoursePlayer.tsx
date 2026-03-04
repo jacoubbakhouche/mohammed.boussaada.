@@ -118,7 +118,7 @@ export const CoursePlayer: React.FC = () => {
     if (isLoading) {
         return (
             <div className="h-full flex items-center justify-center min-h-[400px]">
-                <Loader2 className="w-10 h-10 text-primary animate-spin" />
+                <Loader2 className="w-10 h-10 text-[#344E41] animate-spin" />
             </div>
         );
     }
@@ -130,53 +130,53 @@ export const CoursePlayer: React.FC = () => {
             {/* Main Content: Video & Details */}
             <div className="flex-grow space-y-6">
                 {/* Custom Video Player Placeholder */}
-                <div className="relative aspect-video glass-card overflow-hidden group">
+                <div className="relative aspect-video bg-[#e0e2d5] rounded-[32px] overflow-hidden group border border-[#d4dbc4] shadow-xl">
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                        <button className="w-20 h-20 flex items-center justify-center rounded-full bg-primary/90 text-white hover:scale-110 transition-transform shadow-2xl">
-                            <Play className="w-10 h-10 fill-current" />
+                        <button className="w-20 h-20 flex items-center justify-center rounded-full bg-[#344E41]/90 text-white hover:scale-110 transition-transform shadow-2xl">
+                            <Play className="w-10 h-10 fill-current ml-1" />
                         </button>
                     </div>
                     {/* Progress Bar Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
-                        <div className="h-full bg-primary w-1/3 shadow-[0_0_10px_rgba(59,130,246,0.8)]" />
+                        <div className="h-full bg-[#344E41] w-1/3 shadow-[0_0_10px_rgba(52,78,65,0.8)]" />
                     </div>
                 </div>
 
                 {/* Video Info */}
-                <div className="glass-card">
+                <div className="bg-[#EEF0E5] rounded-[32px] p-8 border border-[#d4dbc4] shadow-sm">
                     <div className="flex justify-between items-start mb-4">
                         <div>
-                            <h1 className="text-2xl font-bold mb-2">{activeLesson.title}</h1>
-                            <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+                            <h1 className="text-2xl font-bold mb-2 text-[#1a2e1a]">{activeLesson.title}</h1>
+                            <div className="flex items-center gap-4 text-sm text-[#4a6a4a]">
                                 <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {Math.floor(activeLesson.duration_seconds / 60)}:{(activeLesson.duration_seconds % 60).toString().padStart(2, '0')}</span>
                                 <span className="flex items-center gap-1"><MessageSquare className="w-4 h-4" /> {comments.length} Comments</span>
                             </div>
                         </div>
                         <div className="flex gap-2">
-                            <button className="p-2 glass rounded-lg hover:bg-white/20 transition-colors">
-                                <Bookmark className="w-5 h-5" />
+                            <button className="p-2 bg-white/50 border border-[#d4dbc4] rounded-xl hover:bg-white/80 transition-colors">
+                                <Bookmark className="w-5 h-5 text-[#344E41]" />
                             </button>
-                            <button className="p-2 glass rounded-lg hover:bg-white/20 transition-colors">
-                                <Share2 className="w-5 h-5" />
+                            <button className="p-2 bg-white/50 border border-[#d4dbc4] rounded-xl hover:bg-white/80 transition-colors">
+                                <Share2 className="w-5 h-5 text-[#344E41]" />
                             </button>
                         </div>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="text-[#4a6a4a] leading-relaxed">
                         {activeLesson.description || 'No description available for this lesson.'}
                     </p>
                 </div>
 
                 {/* Comment Section (Nested Support) */}
-                <div className="glass-card">
-                    <h2 className="text-xl font-bold mb-6">Comments</h2>
+                <div className="bg-[#EEF0E5] rounded-[32px] p-8 border border-[#d4dbc4] shadow-sm">
+                    <h2 className="text-xl font-bold mb-6 text-[#1a2e1a]">Comments</h2>
                     <div className="space-y-6">
                         <div className="flex gap-4">
-                            <div className="w-10 h-10 rounded-full bg-indigo-500/20 glass flex-shrink-0 flex items-center justify-center">
-                                <Loader2 className="w-5 h-5 opacity-20" />
+                            <div className="w-10 h-10 rounded-full bg-[#d4dbc4] flex-shrink-0 flex items-center justify-center">
+                                <Loader2 className="w-5 h-5 text-[#344E41] opacity-20" />
                             </div>
                             <div className="flex-grow flex gap-2">
                                 <input
-                                    className="w-full glass-input"
+                                    className="w-full bg-white border border-[#d4dbc4] rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#344E41]/30 transition-all"
                                     placeholder="Share your thoughts or questions..."
                                     value={newComment}
                                     onChange={(e) => setNewComment(e.target.value)}
@@ -185,7 +185,7 @@ export const CoursePlayer: React.FC = () => {
                                 <button
                                     onClick={() => handleSendComment()}
                                     disabled={isSending}
-                                    className="p-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors disabled:opacity-50"
+                                    className="p-2 bg-[#344E41] text-white rounded-xl hover:bg-[#2a3f34] transition-colors disabled:opacity-50"
                                 >
                                     <Send className="w-5 h-5" />
                                 </button>
@@ -204,24 +204,24 @@ export const CoursePlayer: React.FC = () => {
                                             <span className="font-semibold text-sm">{comment.profiles?.full_name || 'Anonymous'}</span>
                                             <span className="text-xs text-slate-500">{new Date(comment.created_at).toLocaleDateString()}</span>
                                         </div>
-                                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                                        <p className="text-sm text-[#4a6a4a]">
                                             {comment.content}
                                         </p>
-                                        <button className="text-xs font-medium text-primary hover:underline">Reply</button>
+                                        <button className="text-xs font-medium text-[#344E41] hover:underline">Reply</button>
 
                                         {/* Nested Support */}
                                         {comments.filter(reply => reply.parent_id === comment.id).map(reply => (
-                                            <div key={reply.id} className="mt-4 ml-8 pl-4 border-l border-white/10 space-y-4">
+                                            <div key={reply.id} className="mt-4 ml-8 pl-4 border-l border-[#d4dbc4] space-y-4">
                                                 <div className="flex gap-3">
-                                                    <div className="w-8 h-8 rounded-full bg-amber-500/20 glass flex-shrink-0 flex items-center justify-center text-xs font-bold overflow-hidden">
+                                                    <div className="w-8 h-8 rounded-full bg-[#d4dbc4] flex-shrink-0 flex items-center justify-center text-xs font-bold overflow-hidden">
                                                         {reply.profiles?.full_name?.charAt(0)}
                                                     </div>
                                                     <div className="space-y-1">
                                                         <div className="flex items-center gap-2">
-                                                            <span className="font-semibold text-xs">{reply.profiles?.full_name || 'Anonymous'}</span>
-                                                            <span className="text-[10px] text-slate-500">{new Date(reply.created_at).toLocaleDateString()}</span>
+                                                            <span className="font-semibold text-xs text-[#1a2e1a]">{reply.profiles?.full_name || 'Anonymous'}</span>
+                                                            <span className="text-[10px] text-[#4a6a4a]">{new Date(reply.created_at).toLocaleDateString()}</span>
                                                         </div>
-                                                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                                                        <p className="text-xs text-[#4a6a4a]">
                                                             {reply.content}
                                                         </p>
                                                     </div>
@@ -246,17 +246,17 @@ export const CoursePlayer: React.FC = () => {
                                 key={lesson.id}
                                 onClick={() => setActiveLesson(lesson)}
                                 className={cn(
-                                    "w-full flex items-center justify-between p-3 rounded-xl transition-all duration-200 group",
+                                    "w-full flex items-center justify-between p-4 rounded-2xl transition-all duration-300 group",
                                     activeLesson?.id === lesson.id
-                                        ? "bg-primary text-white shadow-lg shadow-primary/20"
-                                        : "glass hover:bg-white/20"
+                                        ? "bg-[#344E41] text-white shadow-lg shadow-[#344E41]/20"
+                                        : "bg-white/50 border border-transparent hover:border-[#d4dbc4] hover:bg-white/80"
                                 )}
                             >
                                 <div className="flex items-center gap-3 text-left">
                                     {lesson.completed ? (
-                                        <CheckCircle className={cn("w-5 h-5 flex-shrink-0", activeLesson?.id === lesson.id ? "text-white" : "text-green-500")} />
+                                        <CheckCircle className={cn("w-5 h-5 flex-shrink-0", activeLesson?.id === lesson.id ? "text-white" : "text-[#344E41]")} />
                                     ) : (
-                                        <div className={cn("w-5 h-5 rounded-full border-2 flex-shrink-0", activeLesson?.id === lesson.id ? "border-white/50" : "border-slate-400")} />
+                                        <div className={cn("w-5 h-5 rounded-full border-2 flex-shrink-0", activeLesson?.id === lesson.id ? "border-white/50" : "border-[#d4dbc4]")} />
                                     )}
                                     <div>
                                         <div className="text-sm font-bold line-clamp-1">{lesson.title}</div>
@@ -270,13 +270,13 @@ export const CoursePlayer: React.FC = () => {
                         ))}
                     </div>
 
-                    <div className="mt-6 pt-6 border-t border-white/10">
-                        <div className="flex justify-between items-center text-sm font-medium mb-2">
+                    <div className="mt-8 pt-6 border-t border-[#d4dbc4]">
+                        <div className="flex justify-between items-center text-sm font-bold text-[#1a2e1a] mb-2">
                             <span>Overall Progress</span>
                             <span>40%</span>
                         </div>
-                        <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                            <div className="h-full bg-primary w-[40%] rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+                        <div className="h-2 w-full bg-[#d4dbc4] rounded-full overflow-hidden">
+                            <div className="h-full bg-[#344E41] w-[40%] rounded-full shadow-[0_0_10px_rgba(52,78,65,0.4)]" />
                         </div>
                     </div>
                 </div>
