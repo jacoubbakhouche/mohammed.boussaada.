@@ -167,9 +167,16 @@ export const LandingPage: React.FC<{ onGetStarted: () => void }> = ({ onGetStart
             {/* Custom Footer Tags */}
             <section className="max-w-7xl mx-auto px-6 py-12 text-center">
                 <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-neutral-500 opacity-60">
-                    {['Serve Me App', 'Jacob Bakhouche', 'Annaba'].map(brand => (
-                        <span key={brand} className="text-lg md:text-xl font-bold tracking-widest uppercase">{brand}</span>
-                    ))}
+                    <span className="text-lg md:text-xl font-bold tracking-widest uppercase">Serve Me App</span>
+                    <a 
+                        href="https://www.instagram.com/p/DTxkJIOjA0R/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-lg md:text-xl font-bold tracking-widest uppercase hover:text-white transition-colors"
+                    >
+                        Jacob Bakhouche UI with Neumorphism Style
+                    </a>
+                    <span className="text-lg md:text-xl font-bold tracking-widest uppercase">Annaba</span>
                 </div>
             </section>
 
