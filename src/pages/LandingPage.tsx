@@ -10,12 +10,12 @@ const INSTAGRAM_REELS = [
 ];
 
 const LESSONS = [
-    { id: 1, title: 'Introduction', duration: '15:30', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-41710-large.mp4', description: 'The 5 basic principles of graphic design — symmetry, scale, framing, hierarchy, and grids.' },
-    { id: 2, title: 'Symmetry vs. asymmetry', duration: '20:24', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-person-typing-on-a-computer-keyboard-41696-large.mp4', description: 'You\'ll learn how both should employ balance and can be dynamic.' },
-    { id: 3, title: 'Scale', duration: '18:10', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-vertical-view-of-a-man-working-on-his-laptop-34441-large.mp4', description: 'Scale is about size, but more than that, it\'s about relationships.' },
-    { id: 4, title: 'Framing', duration: '22:45', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-41710-large.mp4', description: 'You\'ll learn how prevalent framing is in the design process.' },
-    { id: 5, title: 'Hierarchy', duration: '19:55', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-person-typing-on-a-computer-keyboard-41696-large.mp4', description: 'Master the art of visual hierarchy to guide users\' attention.' },
-    { id: 6, title: 'Grid Systems', duration: '25:00', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-vertical-view-of-a-man-working-on-his-laptop-34441-large.mp4', description: 'Explore how grid systems create structure and consistency.' },
+    { id: 1, title: 'Introduction', duration: '15:30', videoUrl: '/reel1.mp4', description: 'The 5 basic principles of graphic design — symmetry, scale, framing, hierarchy, and grids.' },
+    { id: 2, title: 'Symmetry vs. asymmetry', duration: '20:24', videoUrl: '/reel2.mp4', description: 'You\'ll learn how both should employ balance and can be dynamic.' },
+    { id: 3, title: 'Scale', duration: '18:10', videoUrl: '/reel3.mp4', description: 'Scale is about size, but more than that, it\'s about relationships.' },
+    { id: 4, title: 'Framing', duration: '22:45', videoUrl: '/reel1.mp4', description: 'You\'ll learn how prevalent framing is in the design process.' },
+    { id: 5, title: 'Hierarchy', duration: '19:55', videoUrl: '/reel2.mp4', description: 'Master the art of visual hierarchy to guide users\' attention.' },
+    { id: 6, title: 'Grid Systems', duration: '25:00', videoUrl: '/reel3.mp4', description: 'Explore how grid systems create structure and consistency.' },
 ];
 
 export const LandingPage: React.FC<{ onGetStarted: () => void }> = ({ onGetStarted }) => {
