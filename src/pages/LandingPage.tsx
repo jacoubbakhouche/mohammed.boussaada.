@@ -10,12 +10,12 @@ const INSTAGRAM_REELS = [
 ];
 
 const LESSONS = [
-    { id: 1, title: 'Introduction', duration: '15:30', reelId: INSTAGRAM_REELS[0], description: 'The 5 basic principles of graphic design — symmetry, scale, framing, hierarchy, and grids.' },
-    { id: 2, title: 'Symmetry vs. asymmetry', duration: '20:24', reelId: INSTAGRAM_REELS[1], description: 'You\'ll learn how both should employ balance and can be dynamic.' },
-    { id: 3, title: 'Scale', duration: '18:10', reelId: INSTAGRAM_REELS[2], description: 'Scale is about size, but more than that, it\'s about relationships.' },
-    { id: 4, title: 'Framing', duration: '22:45', reelId: INSTAGRAM_REELS[0], description: 'You\'ll learn how prevalent framing is in the design process.' },
-    { id: 5, title: 'Hierarchy', duration: '19:55', reelId: INSTAGRAM_REELS[1], description: 'Master the art of visual hierarchy to guide users\' attention.' },
-    { id: 6, title: 'Grid Systems', duration: '25:00', reelId: INSTAGRAM_REELS[2], description: 'Explore how grid systems create structure and consistency.' },
+    { id: 1, title: 'Introduction', duration: '15:30', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-41710-large.mp4', description: 'The 5 basic principles of graphic design — symmetry, scale, framing, hierarchy, and grids.' },
+    { id: 2, title: 'Symmetry vs. asymmetry', duration: '20:24', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-person-typing-on-a-computer-keyboard-41696-large.mp4', description: 'You\'ll learn how both should employ balance and can be dynamic.' },
+    { id: 3, title: 'Scale', duration: '18:10', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-vertical-view-of-a-man-working-on-his-laptop-34441-large.mp4', description: 'Scale is about size, but more than that, it\'s about relationships.' },
+    { id: 4, title: 'Framing', duration: '22:45', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-typing-on-a-laptop-41710-large.mp4', description: 'You\'ll learn how prevalent framing is in the design process.' },
+    { id: 5, title: 'Hierarchy', duration: '19:55', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-person-typing-on-a-computer-keyboard-41696-large.mp4', description: 'Master the art of visual hierarchy to guide users\' attention.' },
+    { id: 6, title: 'Grid Systems', duration: '25:00', videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-vertical-view-of-a-man-working-on-his-laptop-34441-large.mp4', description: 'Explore how grid systems create structure and consistency.' },
 ];
 
 export const LandingPage: React.FC<{ onGetStarted: () => void }> = ({ onGetStarted }) => {
@@ -100,14 +100,15 @@ export const LandingPage: React.FC<{ onGetStarted: () => void }> = ({ onGetStart
                         {[...LESSONS, ...LESSONS].map((lesson, idx) => (
                             <div key={`${lesson.id}-${idx}`} className="w-[300px] flex-shrink-0 group/card">
                                 <div className="relative bg-neutral-900 rounded-[40px] overflow-hidden shadow-2xl transition-all duration-500 group-hover/card:scale-[1.02] group-hover/card:shadow-neutral-800/50" style={{ aspectRatio: '9/16' }}>
-                                    {/* Instagram Reel - Video Only (cropped UI) */}
-                                    <div className="absolute inset-0" style={{ top: '-60px', bottom: '-80px', left: '-1px', right: '-1px' }}>
-                                        <iframe
-                                            src={`https://www.instagram.com/reel/${lesson.reelId}/embed/?hidecaption=true&cr=1`}
-                                            className="w-full h-[120%] border-0 pointer-events-none"
-                                            allowFullScreen
-                                            scrolling="no"
-                                            title={`Lesson ${lesson.id}: ${lesson.title}`}
+                                    {/* Native Video Wrap */}
+                                    <div className="absolute inset-0 bg-black">
+                                        <video
+                                            className="w-full h-full object-cover opacity-80"
+                                            src={lesson.videoUrl}
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
                                         />
                                     </div>
 
