@@ -166,16 +166,22 @@ export const LandingPage: React.FC<{ onGetStarted: () => void }> = ({ onGetStart
 
             {/* Custom Footer Tags */}
             <section className="max-w-7xl mx-auto px-6 py-12 text-center">
-                <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-neutral-500 opacity-60">
+                <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-neutral-500 opacity-80">
                     <span className="text-lg md:text-xl font-bold tracking-widest uppercase">Serve Me App</span>
+                    
                     <a 
                         href="https://www.instagram.com/p/DTxkJIOjA0R/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="text-lg md:text-xl font-bold tracking-widest uppercase hover:text-white transition-colors"
+                        className="group relative inline-flex overflow-hidden rounded-full p-[2px] transition-transform hover:scale-105"
                     >
-                        Jacob Bakhouche UI with Neumorphism Style
+                        <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#344E41_0%,#a3b18a_50%,#344E41_100%)]" />
+                        <span className="inline-flex h-full w-full items-center justify-center gap-2 rounded-full bg-neutral-950 px-6 py-2 text-sm md:text-base font-bold text-white backdrop-blur-3xl uppercase tracking-widest group-hover:bg-neutral-900 transition-colors">
+                            <span className="text-neutral-400">Developer</span> 
+                            <span>Jacob Bakhouche</span>
+                        </span>
                     </a>
+
                     <span className="text-lg md:text-xl font-bold tracking-widest uppercase">Annaba</span>
                 </div>
             </section>
